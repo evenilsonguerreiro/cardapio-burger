@@ -124,6 +124,16 @@ adressInput.addEventListener('input', function(event){
 })
 
 checoutBtn.addEventListener('click', function(){
+
+   /* const isOpen = checoutHoras()
+        if(!isOpen){
+            alert('ESTAMOS FEICHADO NO MOMENTO')
+            return;
+        }*/
+    
+
+
+
     if(cart.length === 0) return;
 
     if(adressInput.value === ''){
@@ -131,6 +141,21 @@ checoutBtn.addEventListener('click', function(){
         adressInput.classList.add('border-red-500')
         return;
     }
+
+
+// finalizar pedido //
+const cartItems = cart.map((item) => {
+    return (
+        `${item.name}:Quantidade: (${item.quantidade}) :R$(${item.price}):`
+    )
+}).join("")
+
+const mensagem = encodeURIComponent(cartItems)
+const phone = '85988540568'
+
+window.open(`https://wa.me/${phone}?text=${mensagem} Endereço:${adressInput.value}`,"_blank")
+
+
 })
 
 // verificar a hora e manipular //
