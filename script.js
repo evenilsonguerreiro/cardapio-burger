@@ -125,11 +125,11 @@ adressInput.addEventListener('input', function(event){
 
 checoutBtn.addEventListener('click', function(){
 
-   /* const isOpen = checoutHoras()
+    const isOpen = checoutHoras()
         if(!isOpen){
             alert('ESTAMOS FEICHADO NO MOMENTO')
             return;
-        }*/
+        }
     
 
 
@@ -151,7 +151,7 @@ const cartItems = cart.map((item) => {
 }).join("")
 
 const mensagem = encodeURIComponent(cartItems)
-const phone = '85988540568'
+const phone = '5585988540568'
 
 window.open(`https://wa.me/${phone}?text=${mensagem} Endereço:${adressInput.value}`,"_blank")
 
